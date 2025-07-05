@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Partidas Rankeadas</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #f30dae;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #f30dae;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #f30dae;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calculadora Rankeadas</h1>
+
+  <input type="number" id="vitorias" placeholder="Digite as vitórias">
+  <input type="number" id="derrotas" placeholder="Digite as derrotas">
+
+  <button onclick="calcularRank()">Calcular Nível</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcularRank() {
+      const vitorias = parseInt(document.getElementById('vitorias').value);
+      const derrotas = parseInt(document.getElementById('derrotas').value);
+      const saldo = vitorias - derrotas;
+
+      let nivel = "";
+
+      if (vitorias < 10) {
+        nivel = "Ferro";
+      } else if (vitorias <= 20) {
+        nivel = "Bronze";
+      } else if (vitorias <= 50) {
+        nivel = "Prata";
+      } else if (vitorias <= 80) {
+        nivel = "Ouro";
+      } else if (vitorias <= 90) {
+        nivel = "Diamante";
+      } else if (vitorias <= 100) {
+        nivel = "Lendário";
+      } else {
+        nivel = "Imortal";
+      }
+
+      const resultado = `O Herói tem de saldo de <strong>${saldo}</strong> está no nível de <strong>${nivel}</strong>`;
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+  </script>
+
+</body>
+</html>
