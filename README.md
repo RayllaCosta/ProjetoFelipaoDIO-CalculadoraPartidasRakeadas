@@ -1,7 +1,9 @@
 🧠 Calculadora de Partidas Rankeadas - DIO
+
 Este projeto foi desenvolvido como parte do desafio de lógica de programação da DIO. A proposta é criar uma função que calcula o saldo de partidas ranqueadas (vitórias - derrotas) e retorna o nível do herói com base em sua performance.
 
 🚀 Tecnologias Utilizadas
+
 HTML5
 
 CSS3
@@ -9,6 +11,7 @@ CSS3
 JavaScript
 
 🎯 Funcionalidades
+
 Entrada de número de vitórias e derrotas.
 
 Cálculo automático do saldo de partidas.
